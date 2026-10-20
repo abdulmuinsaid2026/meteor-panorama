@@ -143,6 +143,13 @@ app.post('/api/lead', async (req, res) => {
   }
 });
 
+// Özel Ürün Sayfaları (Temiz URL Desteği)
+app.get('/cam-balkon', (req, res) => res.sendFile(path.join(__dirname, 'cam-balkon.html')));
+app.get('/pvc-sistemleri', (req, res) => res.sendFile(path.join(__dirname, 'pvc-sistemleri.html')));
+app.get('/giyotin-cam', (req, res) => res.sendFile(path.join(__dirname, 'giyotin-cam.html')));
+app.get('/kis-bahcesi', (req, res) => res.sendFile(path.join(__dirname, 'kis-bahcesi.html')));
+app.get('/surme-cam', (req, res) => res.sendFile(path.join(__dirname, 'surme-cam.html')));
+
 // Statik dosyaları servis et (index.html, styles.css, script.js, assets vb.)
 app.use(express.static(path.join(__dirname), {
   etag: false,

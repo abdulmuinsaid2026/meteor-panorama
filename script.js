@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
       meta_desc: "Meteor Panorama; ısıcamlı cam balkon, giyotin cam, kış bahçesi ve alüminyum sürme sistemlerini ölçüye özel üretir. Ölçüden montaja tek ekip.",
       topbar_hours: 'Pzt – Cmt, 08:30 – 18:30',
       nav_products: 'Ürünler', nav_calculator: 'Fiyat Hesapla', nav_production: 'Üretim', nav_contact: 'İletişim', nav_cta: 'Teklif Al',
-      hero_place: 'Cam balkon · Giyotin cam · Kış bahçesi',
+      nav_cambalkon: 'Cam Balkon', nav_pvc: 'PVC Sistemleri', nav_giyotin: 'Giyotin Cam', nav_kisbahcesi: 'Kış Bahçesi', nav_surme: 'Sürme Sistem',
+      hero_place: 'Cam balkon · Giyotin cam · Kış bahçesi · PVC Sistemleri',
       hero_title: 'Balkonunuzu dört mevsim yaşam alanına çevirin',
       hero_lead: 'Ölçüye özel üretim, yerinde keşif ve profesyonel montaj. Türkiye ve Avrupa’ya teslim ediyoruz.',
       hero_cta_calc: 'Fiyat hesapla', hero_cta_wa: "WhatsApp'tan yazın",
@@ -24,13 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
       stat1_label: 'Yıllık deneyim', stat2_label: 'Tamamlanan proje', stat3_label: 'Dil desteği',
       hero_card_title: 'Ücretsiz keşif', hero_card_text: "Yerinde ölçü için WhatsApp'tan randevu alın.",
       prod_title: 'Ürünler',
-      prod_desc: 'Balkon, teras ve işletmeler için dört ana sistem. Hepsi ölçünüze göre üretilir.',
+      prod_desc: 'Balkon, teras, pencere ve işletmeler için ölçüye özel mimari sistemler.',
       badge_popular: 'En çok tercih edilen',
-      p1_title: 'Isıcamlı Cam Balkon', p1_desc: 'Çift camlı katlanır sistem. Balkonu kışın da kullanılabilir bir odaya dönüştürür.',
+      p1_title: 'Cam Balkon Sistemleri', p1_desc: 'Isıcamlı çift cam ve Mevlana 8mm temperli tek cam seçenekli katlanır sistemler.',
       p2_title: 'Motorlu Giyotin Cam', p2_desc: 'Kumandayla dikey açılan cam paneller. Açıkken korkuluk, kapalıyken tam cephe olur.',
       p3_title: 'Kış Bahçesi', p3_desc: 'Alüminyum taşıyıcı ve cam çatıyla bahçe ya da terasta dört mevsim kullanılan alan.',
       p4_title: 'Alüminyum Sürme Sistem', p4_desc: 'İnce profilli, eşiksiz ray seçenekli sürme kapılar. Salonu bahçeye ya da terasa açar.',
-      price_from: 'm² başlangıç', btn_details: 'Teknik detay', btn_calc_this: 'Hesapla',
+      p5_title: 'PVC Pencere & Kapı Sistemleri', p5_desc: 'Yüksek ısı ve ses yalıtımlı çok odacıklı PVC profil, çift veya üçlü cam konforu.',
+      mevlana_title: 'Mevlana 8mm Temperli Tek Cam', mevlana_desc: '8 mm rodajlı darbeye dayanıklı temperli emniyet camı, ferah panoramik manzara, ekonomik ve şık kapatma.',
+      isicam_title: 'Isıcamlı Cam Balkon', isicam_desc: '4+12+4 veya 4+16+4 temperli çift camlı, yüksek ısı yalıtımlı, balkonu dört mevsim sıcak odaya çeviren sistem.',
+      price_from: 'm² başlangıç', btn_details: 'Teknik detay', btn_calc_this: 'Hesapla', btn_view_page: 'Sayfayı İncele',
       calc_title: 'Tahmini fiyat hesaplama',
       calc_desc: "Ürünü ve yaklaşık ölçüleri seçin. Sonucu tek tıkla WhatsApp'tan bize gönderebilirsiniz.",
       step1_title: 'Ürün', step2_title: 'Alan şekli', step3_title: 'Ölçüler', step4_title: 'Cam ve profil',
@@ -74,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
       meta_desc: 'Meteor Panorama fertigt Balkonverglasungen, Guillotine-Glas, Wintergärten und Aluminium-Schiebesysteme nach Maß. Von der Aufnahme bis zur Montage aus einer Hand.',
       topbar_hours: 'Mo – Sa, 08:30 – 18:30 (TR)',
       nav_products: 'Produkte', nav_calculator: 'Preisrechner', nav_production: 'Fertigung', nav_contact: 'Kontakt', nav_cta: 'Angebot anfordern',
-      hero_place: 'Balkonverglasung · Guillotine-Glas · Wintergarten',
+      nav_cambalkon: 'Balkonverglasung', nav_pvc: 'PVC Systeme', nav_giyotin: 'Guillotine-Glas', nav_kisbahcesi: 'Wintergarten', nav_surme: 'Schiebesystem',
+      hero_place: 'Balkonverglasung · Guillotine-Glas · Wintergarten · PVC Systeme',
       hero_title: 'Machen Sie Ihren Balkon zum Wohnraum für alle vier Jahreszeiten',
       hero_lead: 'Fertigung nach Maß, Aufmaß vor Ort und fachgerechte Montage. Lieferung in die Türkei und nach Europa.',
       hero_cta_calc: 'Preis berechnen', hero_cta_wa: 'Per WhatsApp schreiben',
@@ -82,13 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
       stat1_label: 'Jahre Erfahrung', stat2_label: 'Realisierte Projekte', stat3_label: 'Sprachen',
       hero_card_title: 'Kostenloses Aufmaß', hero_card_text: 'Vereinbaren Sie per WhatsApp einen Termin vor Ort.',
       prod_title: 'Produkte',
-      prod_desc: 'Vier Systeme für Balkon, Terrasse und Gewerbe – jeweils nach Ihren Maßen gefertigt.',
+      prod_desc: 'Systeme für Balkon, Terrasse, Fenster und Gewerbe – jeweils nach Ihren Maßen gefertigt.',
       badge_popular: 'Besonders beliebt',
-      p1_title: 'Isolierte Balkonverglasung', p1_desc: 'Faltsystem mit Doppelverglasung. Macht den Balkon auch im Winter nutzbar.',
+      p1_title: 'Balkonverglasung', p1_desc: 'Faltsysteme mit Isolierglas oder Mevlana 8mm ESG-Einscheibenglas.',
       p2_title: 'Elektrisches Guillotine-Glas', p2_desc: 'Vertikal fahrende Glaselemente per Fernbedienung. Offen eine Brüstung, geschlossen eine Glasfront.',
       p3_title: 'Wintergarten', p3_desc: 'Aluminiumkonstruktion mit Glasdach – ganzjährig nutzbarer Raum im Garten oder auf der Terrasse.',
       p4_title: 'Aluminium-Schiebesystem', p4_desc: 'Schiebetüren mit schmalen Profilen, auf Wunsch mit schwellenloser Schiene.',
-      price_from: 'ab pro m²', btn_details: 'Technische Daten', btn_calc_this: 'Berechnen',
+      p5_title: 'PVC Fenster- & Türsysteme', p5_desc: 'Wärmedämmende Mehrkammer-PVC-Profile mit 2-fach oder 3-fach Verglasung.',
+      mevlana_title: 'Mevlana 8mm ESG-Einscheibenglas', mevlana_desc: '8 mm gehärtetes Sicherheitsglas, freier Panoramablick, leichtgängig und preiswert.',
+      isicam_title: 'Isolierte Balkonverglasung', isicam_desc: 'Faltsystem mit Doppel-Isolierglas für ganzjährige Nutzung und beste Wärmedämmung.',
+      price_from: 'ab pro m²', btn_details: 'Technische Daten', btn_calc_this: 'Berechnen', btn_view_page: 'Seite anzeigen',
       calc_title: 'Richtpreis berechnen',
       calc_desc: 'Wählen Sie Produkt und ungefähre Maße. Das Ergebnis senden Sie uns mit einem Klick per WhatsApp.',
       step1_title: 'Produkt', step2_title: 'Form', step3_title: 'Maße', step4_title: 'Glas und Profil',
@@ -132,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
       meta_desc: 'Meteor Panorama builds insulated balcony glazing, guillotine glass, winter gardens and aluminium sliding systems to measure. One team from survey to installation.',
       topbar_hours: 'Mon – Sat, 08:30 – 18:30 (TR)',
       nav_products: 'Products', nav_calculator: 'Price Calculator', nav_production: 'Production', nav_contact: 'Contact', nav_cta: 'Get a Quote',
-      hero_place: 'Balcony glazing · Guillotine glass · Winter garden',
+      nav_cambalkon: 'Balcony Glazing', nav_pvc: 'PVC Systems', nav_giyotin: 'Guillotine Glass', nav_kisbahcesi: 'Winter Garden', nav_surme: 'Sliding Systems',
+      hero_place: 'Balcony glazing · Guillotine glass · Winter garden · PVC Systems',
       hero_title: 'Turn your balcony into a four-season living space',
       hero_lead: 'Made-to-measure production, on-site survey and professional installation. We deliver across Turkey and Europe.',
       hero_cta_calc: 'Calculate price', hero_cta_wa: 'Message on WhatsApp',
@@ -140,13 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
       stat1_label: 'Years of experience', stat2_label: 'Projects completed', stat3_label: 'Languages',
       hero_card_title: 'Free site survey', hero_card_text: 'Book an on-site measurement on WhatsApp.',
       prod_title: 'Products',
-      prod_desc: 'Four systems for balconies, terraces and businesses – each built to your dimensions.',
+      prod_desc: 'Architectural systems for balconies, terraces, windows and businesses – built to your dimensions.',
       badge_popular: 'Most popular',
-      p1_title: 'Insulated Balcony Glazing', p1_desc: 'Double-glazed folding system that makes your balcony usable in winter too.',
+      p1_title: 'Balcony Glazing Systems', p1_desc: 'Folding glass systems with insulated double glazing or Mevlana 8mm tempered glass.',
       p2_title: 'Motorized Guillotine Glass', p2_desc: 'Remote-controlled vertical glass panels. A balustrade when open, a full glass front when closed.',
       p3_title: 'Winter Garden', p3_desc: 'Aluminium frame with glass roof – a year-round room in your garden or on your terrace.',
       p4_title: 'Aluminium Sliding System', p4_desc: 'Slim-profile sliding doors with an optional flush threshold.',
-      price_from: 'from per m²', btn_details: 'Specifications', btn_calc_this: 'Calculate',
+      p5_title: 'PVC Window & Door Systems', p5_desc: 'High thermal insulation multi-chamber PVC profiles with double or triple glazing.',
+      mevlana_title: 'Mevlana 8mm Tempered Single Glass', mevlana_desc: '8 mm impact-resistant tempered safety glass, open panoramic views, smooth and affordable.',
+      isicam_title: 'Insulated Double Glazed Balcony', isicam_desc: 'Double glazed folding system turning your balcony into a warm 4-season living space.',
+      price_from: 'from per m²', btn_details: 'Specifications', btn_calc_this: 'Calculate', btn_view_page: 'View Page',
       calc_title: 'Price estimate',
       calc_desc: 'Choose the product and approximate size. Send us the result on WhatsApp with one click.',
       step1_title: 'Product', step2_title: 'Layout', step3_title: 'Dimensions', step4_title: 'Glass and frame',
@@ -190,11 +202,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Single source of truth: price ranges per m² (also used for the "from" prices on the cards)
   const rates = {
     isicamli:   { tr: [3400, 4400],   eu: [140, 190] },
+    mevlana:    { tr: [2400, 3200],   eu: [100, 140] },
+    pvc:        { tr: [2800, 3900],   eu: [120, 170] },
     giyotin:    { tr: [6400, 8600],   eu: [280, 380] },
     kisbahcesi: { tr: [10500, 14200], eu: [460, 610] },
     surme:      { tr: [3800, 5100],   eu: [160, 215] }
   };
-  const priceCodeToProduct = { isicam: 'isicamli', giyotin: 'giyotin', kisbahcesi: 'kisbahcesi', surme: 'surme' };
+  const priceCodeToProduct = {
+    isicam: 'isicamli',
+    mevlana: 'mevlana',
+    pvc: 'pvc',
+    giyotin: 'giyotin',
+    kisbahcesi: 'kisbahcesi',
+    surme: 'surme'
+  };
 
 
   let lang = 'tr';
@@ -233,7 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------
   // Calculator
   // ---------------------------------------------------
-  const productKey = { isicamli: 'p1_title', giyotin: 'p2_title', kisbahcesi: 'p3_title', surme: 'p4_title' };
+  const productKey = {
+    isicamli: 'p1_title',
+    mevlana: 'mevlana_title',
+    giyotin: 'p2_title',
+    kisbahcesi: 'p3_title',
+    surme: 'p4_title',
+    pvc: 'p5_title'
+  };
   const shapeMod = { 'duz': 1, 'l-tipi': 1.08, 'u-tipi': 1.15 };
   const shapeKey = { 'duz': 'shape_flat', 'l-tipi': 'shape_l', 'u-tipi': 'shape_u' };
   const glassMod = { seffaf: 1, fume: 1.07, bronz: 1.07, reflekte: 1.12 };
@@ -245,6 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const glassSel = $('#glassType'), colorSel = $('#profileColor');
 
   function bindDim(input, range, key, min, max, rangeMax) {
+    if (!input || !range) return;
     input.addEventListener('input', () => {
       const v = parseFloat(input.value);
       if (isNaN(v)) return;
@@ -259,8 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
       calculatePrice();
     });
   }
-  bindDim(inW, rgW, 'width', 1, 50, 20);
-  bindDim(inH, rgH, 'height', 0.8, 6, 4);
+  if (inW && rgW) bindDim(inW, rgW, 'width', 1, 50, 20);
+  if (inH && rgH) bindDim(inH, rgH, 'height', 0.8, 6, 4);
 
   function bindChoices(selector, attr, key) {
     const items = document.querySelectorAll(selector);
@@ -274,41 +303,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   bindChoices('.choice[data-product]', 'data-product', 'product');
   bindChoices('.choice[data-shape]', 'data-shape', 'shape');
-  glassSel.addEventListener('change', calculatePrice);
-  colorSel.addEventListener('change', calculatePrice);
+  if (glassSel) glassSel.addEventListener('change', calculatePrice);
+  if (colorSel) colorSel.addEventListener('change', calculatePrice);
 
   const locale = () => (lang === 'tr' ? 'tr-TR' : lang === 'de' ? 'de-DE' : 'en-GB');
   const money = (n) => n.toLocaleString(locale()) + (lang === 'tr' ? ' ₺' : ' €');
 
   function calculatePrice() {
+    const resPriceDisplay = $('#resPriceDisplay');
+    if (!resPriceDisplay) return;
     const w = state.width, h = state.height;
     const area = Math.round(w * h * 100) / 100;
-    const r = rates[state.product][lang === 'tr' ? 'tr' : 'eu'];
-    const mod = (shapeMod[state.shape] || 1) * (glassMod[glassSel.value] || 1);
+    const prodRates = rates[state.product] || rates.isicamli;
+    const r = prodRates[lang === 'tr' ? 'tr' : 'eu'];
+    const gVal = glassSel ? glassSel.value : 'seffaf';
+    const mod = (shapeMod[state.shape] || 1) * (glassMod[gVal] || 1);
     const round = lang === 'tr' ? 50 : 10;
     const min = Math.round(area * r[0] * mod / round) * round;
     const max = Math.round(area * r[1] * mod / round) * round;
 
-    $('#resPriceDisplay').textContent = `${money(min)} – ${money(max)}`;
-    $('#resDimensions').textContent = `${w.toFixed(1)} × ${h.toFixed(1)} m`;
-    $('#resTotalArea').textContent = `${area.toFixed(2)} m²`;
-    $('#resProduct').textContent = tr(productKey[state.product]);
+    resPriceDisplay.textContent = `${money(min)} – ${money(max)}`;
+    if ($('#resDimensions')) $('#resDimensions').textContent = `${w.toFixed(1)} × ${h.toFixed(1)} m`;
+    if ($('#resTotalArea')) $('#resTotalArea').textContent = `${area.toFixed(2)} m²`;
+    if ($('#resProduct')) $('#resProduct').textContent = tr(productKey[state.product] || 'p1_title');
 
-    const glassTxt = glassSel.options[glassSel.selectedIndex].text;
-    const colorTxt = colorSel.options[colorSel.selectedIndex].text;
+    const glassTxt = (glassSel && glassSel.options[glassSel.selectedIndex]) ? glassSel.options[glassSel.selectedIndex].text : 'Standart';
+    const colorTxt = (colorSel && colorSel.options[colorSel.selectedIndex]) ? colorSel.options[colorSel.selectedIndex].text : 'Standart';
     const lines = {
       tr: ['Merhaba, web sitenizden fiyat hesapladım:', 'Ürün', 'Şekil', 'Ölçü', 'Cam', 'Profil', 'Tahmini fiyat', 'Detaylı teklif almak istiyorum.'],
       de: ['Hallo, ich habe auf Ihrer Website einen Richtpreis berechnet:', 'Produkt', 'Form', 'Maße', 'Glas', 'Profil', 'Richtpreis', 'Ich bitte um ein Angebot.'],
       en: ['Hello, I calculated an estimate on your website:', 'Product', 'Layout', 'Size', 'Glass', 'Frame', 'Estimate', 'I would like a detailed quote.']
     }[lang];
     const msg = `${lines[0]}\n\n` +
-      `${lines[1]}: ${tr(productKey[state.product])}\n` +
-      `${lines[2]}: ${tr(shapeKey[state.shape])}\n` +
+      `${lines[1]}: ${tr(productKey[state.product] || 'p1_title')}\n` +
+      `${lines[2]}: ${tr(shapeKey[state.shape] || 'shape_flat')}\n` +
       `${lines[3]}: ${w.toFixed(1)} × ${h.toFixed(1)} m (${area.toFixed(2)} m²)\n` +
       `${lines[4]}: ${glassTxt}\n` +
       `${lines[5]}: ${colorTxt}\n` +
       `${lines[6]}: ${money(min)} – ${money(max)}\n\n${lines[7]}`;
-    $('#btnSendWhatsapp').href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+    if ($('#btnSendWhatsapp')) $('#btnSendWhatsapp').href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
   }
 
   document.querySelectorAll('.btn-select-product').forEach(btn => {
@@ -317,7 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function selectAndScroll(product) {
     const chip = document.querySelector(`.choice[data-product="${product}"]`);
     if (chip) chip.click();
-    $('#hesaplayici').scrollIntoView({ behavior: 'smooth' });
+    const calcEl = $('#hesaplayici');
+    if (calcEl) calcEl.scrollIntoView({ behavior: 'smooth' });
   }
 
   // ---------------------------------------------------
@@ -355,6 +389,14 @@ document.addEventListener('DOMContentLoaded', () => {
         de: [['Glas', 'Einfach- oder Isolierglas'], ['Schiene', 'Standard oder schwellenlos'], ['Verriegelung', 'Optional mit Schloss'], ['Profil', 'Aluminium, schmal'], ['Fertigung', 'Kayseri']],
         en: [['Glass', 'Single or double glazing'], ['Track', 'Standard or flush threshold'], ['Lock', 'Optional key lock'], ['Frame', 'Slim aluminium'], ['Made in', 'Kayseri']]
       }
+    },
+    'modal-pvc': {
+      img: 'assets/pvc-light.jpg', product: 'pvc', title: 'p5_title', desc: 'p5_desc',
+      specs: {
+        tr: [['Profil', '70–80 mm çok odacıklı PVC profil'], ['Cam', '4+16+4 çift veya üçlü ısıcam'], ['Açılım', 'Tek açılım, çift açılım, sürme kapı'], ['Conta', 'EPDM gri/siyah çift conta'], ['Üretim', 'Kayseri']],
+        de: [['Profil', '70–80 mm Mehrkammer-PVC'], ['Glas', '2-fach oder 3-fach Isolierglas'], ['Öffnung', 'Dreh-Kipp, Schiebe'], ['Dichtung', 'EPDM Doppel-Dichtung'], ['Fertigung', 'Kayseri']],
+        en: [['Frame', '70–80 mm multi-chamber PVC'], ['Glass', 'Double or triple glazing'], ['Opening', 'Tilt & turn, sliding door'], ['Seals', 'EPDM double gasket'], ['Made in', 'Kayseri']]
+      }
     }
   };
 
@@ -362,6 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const content = $('#modalContentArea');
 
   function openModal(key) {
+    if (!backdrop || !content) return;
     const d = modalData[key];
     if (!d) return;
     const title = tr(d.title);
@@ -378,38 +421,51 @@ document.addEventListener('DOMContentLoaded', () => {
           <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP_PHONE}?text=${waText}">${tr('modal_wa')}</a>
         </div>
       </div>`;
-    content.querySelector('[data-modal-calc]').addEventListener('click', (e) => {
-      closeModal();
-      selectAndScroll(e.currentTarget.dataset.modalCalc);
-    });
+    const calcBtn = content.querySelector('[data-modal-calc]');
+    if (calcBtn) {
+      calcBtn.addEventListener('click', (e) => {
+        closeModal();
+        selectAndScroll(e.currentTarget.dataset.modalCalc);
+      });
+    }
     backdrop.classList.add('open');
     backdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
   function closeModal() {
+    if (!backdrop) return;
     backdrop.classList.remove('open');
     backdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
   document.querySelectorAll('[data-open-modal]').forEach(el => el.addEventListener('click', () => openModal(el.dataset.openModal)));
-  $('#closeProductModal').addEventListener('click', closeModal);
-  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) closeModal(); });
+  const closeProdBtn = $('#closeProductModal');
+  if (closeProdBtn) closeProdBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop && backdrop.classList.contains('open')) closeModal(); });
 
   // ---------------------------------------------------
   // Contact form -> WhatsApp
   // ---------------------------------------------------
-  $('#contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const sel = $('#formProductInterest');
-    const msg =
-      `${tr('form_label_name')}: ${$('#formName').value}\n` +
-      `${tr('form_label_phone')}: ${$('#formPhone').value}\n` +
-      `${tr('form_label_country')}: ${$('#formCountry').value}\n` +
-      `${tr('form_label_interest')}: ${sel.options[sel.selectedIndex].text}\n` +
-      `${tr('form_label_msg')}: ${$('#formMessage').value || '-'}`;
-    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
-  });
+  const contactForm = $('#contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const sel = $('#formProductInterest');
+      const interest = sel && sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : '-';
+      const name = $('#formName') ? $('#formName').value : '';
+      const phone = $('#formPhone') ? $('#formPhone').value : '';
+      const country = $('#formCountry') ? $('#formCountry').value : '';
+      const message = $('#formMessage') ? $('#formMessage').value : '';
+      const msg =
+        `${tr('form_label_name')}: ${name}\n` +
+        `${tr('form_label_phone')}: ${phone}\n` +
+        `${tr('form_label_country')}: ${country}\n` +
+        `${tr('form_label_interest')}: ${interest}\n` +
+        `${tr('form_label_msg')}: ${message || '-'}`;
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+  }
 
   // ---------------------------------------------------
   // Mobile menu
