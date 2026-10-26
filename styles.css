@@ -58,7 +58,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .topbar a:hover { color: #fff; }
 
 /* Header */
-.header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.header { position: sticky; top: 0; z-index: 90; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-sm); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); }
 .brand { display: flex; align-items: center; flex-shrink: 0; }
 .brand-logo { height: 68px; width: auto; }
@@ -68,7 +68,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .nav .nav-cta-mobile { display: none; }
 .header-actions { display: flex; align-items: center; gap: 16px; }
 .lang { display: flex; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.lang-btn { padding: 7px 11px; font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+.lang-btn { display: inline-flex; align-items: center; justify-content: center; padding: 7px 11px; font-size: 0.78rem; font-weight: 600; color: var(--muted); }
 .lang-btn + .lang-btn { border-left: 1px solid var(--line); }
 .lang-btn:hover { color: var(--ink); }
 .lang-btn.active { background: var(--ink); color: #fff; }
@@ -231,7 +231,7 @@ a.social-link:hover, .social-link:hover { transform: translateY(-3px); box-shado
 .chat-toggle-badge::after { content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%); border-width: 5px 0 5px 6px; border-style: solid; border-color: transparent transparent transparent #0f172a; }
 .chat-widget.open .chat-toggle-badge { display: none; }
 
-.chat-window { position: absolute; bottom: 74px; right: 0; width: 380px; height: 560px; max-height: calc(100vh - 110px); background: #ffffff; border-radius: 18px; box-shadow: 0 20px 50px -10px rgba(20,32,42,.35), 0 0 1px 1px rgba(20,32,42,.08); display: flex; flex-direction: column; overflow: hidden; transform-origin: bottom right; transform: scale(0.92) translateY(12px); opacity: 0; pointer-events: none; transition: transform .25s cubic-bezier(.2,.7,.2,1), opacity .2s ease; z-index: 90; }
+.chat-window { position: absolute; bottom: 74px; right: 0; width: 380px; height: 560px; height: min(560px, calc(100vh - 240px)); height: min(560px, calc(100dvh - 240px)); max-height: calc(100vh - 240px); max-height: calc(100dvh - 240px); background: #ffffff; border-radius: 18px; box-shadow: 0 20px 50px -10px rgba(20,32,42,.35), 0 0 1px 1px rgba(20,32,42,.08); display: flex; flex-direction: column; overflow: hidden; transform-origin: bottom right; transform: scale(0.92) translateY(12px); opacity: 0; pointer-events: none; transition: transform .25s cubic-bezier(.2,.7,.2,1), opacity .2s ease; z-index: 90; }
 .chat-widget.open .chat-window { transform: scale(1) translateY(0); opacity: 1; pointer-events: auto; }
 .chat-window[hidden] { display: none; }
 .chat-widget.open .chat-window[hidden] { display: flex; }
@@ -399,11 +399,11 @@ a.social-link:hover, .social-link:hover { transform: translateY(-3px); box-shado
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
   .modal-body { padding: 22px 18px; }
   .wa-float { width: 54px; height: 54px; left: 14px; right: auto; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 95; box-shadow: 0 6px 20px rgba(37,211,102,.5); }
-  .chat-widget { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 95; }
+  .chat-widget { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 80; }
   .chat-toggle { width: 54px; height: 54px; box-shadow: 0 8px 24px rgba(2,132,199,.6); }
   .chat-toggle-badge { display: inline-flex !important; right: 62px; top: 50%; transform: translateY(-50%); padding: 5px 9px; font-size: 0.72rem; box-shadow: 0 4px 12px rgba(0,0,0,.2); }
   .chat-widget.open .chat-toggle-badge { display: none !important; }
-  .chat-window { position: fixed; inset: auto 8px calc(74px + env(safe-area-inset-bottom, 0px)) 8px; width: auto; height: min(540px, calc(100vh - 90px - env(safe-area-inset-bottom, 0px))); border-radius: 16px; z-index: 98; }
+  .chat-window { position: fixed; inset: auto 8px calc(74px + env(safe-area-inset-bottom, 0px)) 8px; width: auto; height: min(540px, calc(100vh - 160px - env(safe-area-inset-bottom, 0px))); height: min(540px, calc(100dvh - 160px - env(safe-area-inset-bottom, 0px))); border-radius: 16px; z-index: 80; }
 }
 
 /* ===================================================

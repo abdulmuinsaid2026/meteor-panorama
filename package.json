@@ -4,10 +4,15 @@
   "description": "Meteor Panorama - PVC, Cam Balkon ve Mimari Sistemler",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "check": "node --check server.js && node --check script.js && node --check i18n-content.js"
   },
   "dependencies": {
-    "express": "^5.3.0",
-    "serve": "^14.2.4"
+    "cheerio": "^1.1.2",
+    "dotenv": "^16.4.7",
+    "express": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

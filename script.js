@@ -8,196 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const WHATSAPP_PHONE = '905308447736';
 
   // ---------------------------------------------------
-  // Translations
+  // Localized UI copy
+  // The server renders the page in the active language and injects the
+  // matching dictionary. There is no client-side language switch anymore.
   // ---------------------------------------------------
-  const t = {
-    tr: {
-      meta_title: 'Meteor Panorama | Cam Balkon, Giyotin Cam ve Kış Bahçesi',
-      meta_desc: "Meteor Panorama; ısıcamlı cam balkon, giyotin cam, kış bahçesi ve alüminyum sürme sistemlerini ölçüye özel üretir. Ölçüden montaja tek ekip.",
-      topbar_hours: 'Pzt – Cmt, 08:30 – 18:30',
-      nav_products: 'Ürünler', nav_calculator: 'Fiyat Hesapla', nav_production: 'Üretim', nav_contact: 'İletişim', nav_cta: 'Teklif Al',
-      nav_cambalkon: 'Cam Balkon', nav_pvc: 'PVC Sistemleri', nav_giyotin: 'Giyotin Cam', nav_kisbahcesi: 'Kış Bahçesi', nav_surme: 'Sürme Sistem',
-      hero_place: 'Cam balkon · Giyotin cam · Kış bahçesi · PVC Sistemleri',
-      hero_title: 'Balkonunuzu dört mevsim yaşam alanına çevirin',
-      hero_lead: 'Ölçüye özel üretim, yerinde keşif ve profesyonel montaj. Türkiye ve Avrupa’ya teslim ediyoruz.',
-      hero_cta_calc: 'Fiyat hesapla', hero_cta_wa: "WhatsApp'tan yazın",
-      hero_p1: 'Ölçüye özel üretim', hero_p2: 'Ücretsiz keşif ve ölçü', hero_p3: 'Profesyonel montaj',
-      stat1_label: 'Yıllık deneyim', stat2_label: 'Tamamlanan proje', stat3_label: 'Dil desteği',
-      hero_card_title: 'Ücretsiz keşif', hero_card_text: "Yerinde ölçü için WhatsApp'tan randevu alın.",
-      prod_title: 'Ürünler',
-      prod_desc: 'Balkon, teras, pencere ve işletmeler için ölçüye özel mimari sistemler.',
-      badge_popular: 'En çok tercih edilen',
-      p1_title: 'Cam Balkon Sistemleri', p1_desc: 'Isıcamlı çift cam ve Mevlana 8mm temperli tek cam seçenekli katlanır sistemler.',
-      p2_title: 'Motorlu Giyotin Cam', p2_desc: 'Kumandayla dikey açılan cam paneller. Açıkken korkuluk, kapalıyken tam cephe olur.',
-      p3_title: 'Kış Bahçesi', p3_desc: 'Alüminyum taşıyıcı ve cam çatıyla bahçe ya da terasta dört mevsim kullanılan alan.',
-      p4_title: 'Alüminyum Sürme Sistem', p4_desc: 'İnce profilli, eşiksiz ray seçenekli sürme kapılar. Salonu bahçeye ya da terasa açar.',
-      p5_title: 'PVC Pencere & Kapı Sistemleri', p5_desc: 'Yüksek ısı ve ses yalıtımlı çok odacıklı PVC profil, çift veya üçlü cam konforu.',
-      mevlana_title: 'Mevlana 8mm Temperli Tek Cam', mevlana_desc: '8 mm rodajlı darbeye dayanıklı temperli emniyet camı, ferah panoramik manzara, ekonomik ve şık kapatma.',
-      isicam_title: 'Isıcamlı Cam Balkon', isicam_desc: '4+12+4 veya 4+16+4 temperli çift camlı, yüksek ısı yalıtımlı, balkonu dört mevsim sıcak odaya çeviren sistem.',
-      price_from: 'm² başlangıç', btn_details: 'Teknik detay', btn_calc_this: 'Hesapla', btn_view_page: 'Sayfayı İncele',
-      calc_title: 'Tahmini fiyat hesaplama',
-      calc_desc: "Ürünü ve yaklaşık ölçüleri seçin. Sonucu tek tıkla WhatsApp'tan bize gönderebilirsiniz.",
-      step1_title: 'Ürün', step2_title: 'Alan şekli', step3_title: 'Ölçüler', step4_title: 'Cam ve profil',
-      shape_flat: 'Düz', shape_l: 'L tipi', shape_u: 'U tipi',
-      label_width: 'Toplam genişlik (m)', label_height: 'Yükseklik (m)',
-      label_glass_type: 'Cam', label_profile_color: 'Profil rengi',
-      opt_glass_clear: 'Şeffaf çift cam', opt_glass_fume: 'Füme', opt_glass_bronze: 'Bronz', opt_glass_reflect: 'Reflekte',
-      opt_color_anthracite: 'Antrasit (RAL 7016)', opt_color_black: 'Siyah (RAL 9005)', opt_color_white: 'Beyaz (RAL 9016)', opt_color_eloxal: 'Eloksal', opt_color_wood: 'Ahşap desen',
-      res_est_title: 'Tahmini fiyat aralığı', res_product: 'Ürün',
-      res_f1: 'Ücretsiz keşif ve ölçü', res_f2: 'Ölçünüze özel net teklif',
-      btn_whatsapp_quote: "Bu ölçülerle WhatsApp'tan teklif iste",
-      res_disclaimer: 'Bu tutar bilgi amaçlıdır. Kesin fiyat, yerinde ölçü alındıktan sonra verilir.',
-      prod2_title: 'Ölçüden montaja, tek ekip',
-      prod2_p1: 'Keşif, ölçü, üretim ve montaj aynı ekip tarafından yürütülür. Aracı yoktur; süreç, termin ve kalite baştan sona bizim kontrolümüzdedir.',
-      prod2_p2: 'Türkiye’nin her yerine ve Avrupa’ya teslimat yapıyoruz. Türkçe, Almanca ve İngilizce destek veriyoruz.',
-      s1_title: 'Keşif ve ölçü', s1_desc: 'Alanı yerinde ölçer, size uygun sistemi birlikte belirleriz.',
-      s2_title: 'Proje ve teklif', s2_desc: 'Ölçü, cam ve renk seçimlerinizle net bir teklif hazırlarız.',
-      s3_title: 'Üretim', s3_desc: 'Onaylanan ölçülere göre sistem tesisimizde üretilir.',
-      s4_title: 'Teslim ve montaj', s4_desc: 'Ürün korumalı ambalajla gönderilir ve montajı yapılır.',
-      contact_title: 'İletişim', contact_addr_title: 'Adres', contact_phone_title: 'Telefon / WhatsApp',
-      contact_email_title: 'E-posta', contact_hours_title: 'Çalışma saatleri', contact_hours_val: 'Pazartesi – Cumartesi, 08:30 – 18:30',
-      form_title: 'Bize yazın', form_label_name: 'Ad soyad', form_label_phone: 'Telefon', form_label_country: 'Şehir / ülke',
-      form_label_interest: 'İlgilendiğiniz ürün', form_opt_other: 'Diğer', form_label_msg: 'Mesajınız', form_btn_send: 'WhatsApp ile gönder',
-      foot_about: 'Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerinde ölçüden montaja tek ekip.',
-      foot_links: 'Bağlantılar', foot_follow: 'Bizi takip edin', foot_rights: 'Tüm hakları saklıdır.', foot_top: 'Yukarı çık', country: 'Türkiye',
-      chat_title: 'Meteor Canlı Destek', chat_subtitle: 'AI Asistan · Çevrimiçi', chat_badge: 'Canlı Destek',
-      chat_welcome: "Merhaba! Meteor Panorama'ya hoş geldiniz. Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerimiz hakkında her şeyi bana sorabilirsiniz. Size nasıl yardımcı olabilirim?",
-      chat_placeholder: 'Bir soru yazın...', chat_quick_title: 'Hızlı Sorular:',
-      chat_status_waiting: 'Meteor AI yanıt hazırlıyor...',
-      chat_q1: 'Ürünleriniz nelerdir?', chat_q2: 'Keşif ve ölçü ücretsiz mi?', chat_q3: 'Fiyat nasıl hesaplanır?',
-      chat_q4: 'Hangi bölgelere teslimat yapıyorsunuz?', chat_q5: 'Yetkiliye bağlan / Teklif iste',
-      chat_rep_title: 'Uzman Ekip İletişim Talebi', chat_rep_name: 'Adınız Soyadınız', chat_rep_phone: 'Telefon Numaranız',
-      chat_rep_note: 'Notunuz / Talebiniz', chat_rep_btn: 'Yetkiliye İlet', chat_rep_wa: "WhatsApp'tan Devam Et",
-      chat_rep_success: 'Talebiniz yetkili ekibimize başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.',
-      chat_err_msg: 'Şu anda yanıt üretilirken bir gecikme oluştu. Dilerseniz hemen WhatsApp üzerinden yetkilimizle iletişime geçebilirsiniz:',
-      chat_lead_prompt: 'Ölçü ve teklif için aşağıdaki formu doldurabilir veya WhatsApp butonuna basabilirsiniz:',
-      area: 'm²', specs_title: 'Teknik bilgiler', modal_calc: 'Bu ürün için fiyat hesapla', modal_wa: "WhatsApp'tan bilgi al"
-    },
-    de: {
-      meta_title: 'Meteor Panorama | Balkonverglasung, Guillotine-Glas und Wintergärten',
-      meta_desc: 'Meteor Panorama fertigt Balkonverglasungen, Guillotine-Glas, Wintergärten und Aluminium-Schiebesysteme nach Maß. Von der Aufnahme bis zur Montage aus einer Hand.',
-      topbar_hours: 'Mo – Sa, 08:30 – 18:30 (TR)',
-      nav_products: 'Produkte', nav_calculator: 'Preisrechner', nav_production: 'Fertigung', nav_contact: 'Kontakt', nav_cta: 'Angebot anfordern',
-      nav_cambalkon: 'Balkonverglasung', nav_pvc: 'PVC Systeme', nav_giyotin: 'Guillotine-Glas', nav_kisbahcesi: 'Wintergarten', nav_surme: 'Schiebesystem',
-      hero_place: 'Balkonverglasung · Guillotine-Glas · Wintergarten · PVC Systeme',
-      hero_title: 'Machen Sie Ihren Balkon zum Wohnraum für alle vier Jahreszeiten',
-      hero_lead: 'Fertigung nach Maß, Aufmaß vor Ort und fachgerechte Montage. Lieferung in die Türkei und nach Europa.',
-      hero_cta_calc: 'Preis berechnen', hero_cta_wa: 'Per WhatsApp schreiben',
-      hero_p1: 'Fertigung nach Maß', hero_p2: 'Kostenloses Aufmaß', hero_p3: 'Fachgerechte Montage',
-      stat1_label: 'Jahre Erfahrung', stat2_label: 'Realisierte Projekte', stat3_label: 'Sprachen',
-      hero_card_title: 'Kostenloses Aufmaß', hero_card_text: 'Vereinbaren Sie per WhatsApp einen Termin vor Ort.',
-      prod_title: 'Produkte',
-      prod_desc: 'Systeme für Balkon, Terrasse, Fenster und Gewerbe – jeweils nach Ihren Maßen gefertigt.',
-      badge_popular: 'Besonders beliebt',
-      p1_title: 'Balkonverglasung', p1_desc: 'Faltsysteme mit Isolierglas oder Mevlana 8mm ESG-Einscheibenglas.',
-      p2_title: 'Elektrisches Guillotine-Glas', p2_desc: 'Vertikal fahrende Glaselemente per Fernbedienung. Offen eine Brüstung, geschlossen eine Glasfront.',
-      p3_title: 'Wintergarten', p3_desc: 'Aluminiumkonstruktion mit Glasdach – ganzjährig nutzbarer Raum im Garten oder auf der Terrasse.',
-      p4_title: 'Aluminium-Schiebesystem', p4_desc: 'Schiebetüren mit schmalen Profilen, auf Wunsch mit schwellenloser Schiene.',
-      p5_title: 'PVC Fenster- & Türsysteme', p5_desc: 'Wärmedämmende Mehrkammer-PVC-Profile mit 2-fach oder 3-fach Verglasung.',
-      mevlana_title: 'Mevlana 8mm ESG-Einscheibenglas', mevlana_desc: '8 mm gehärtetes Sicherheitsglas, freier Panoramablick, leichtgängig und preiswert.',
-      isicam_title: 'Isolierte Balkonverglasung', isicam_desc: 'Faltsystem mit Doppel-Isolierglas für ganzjährige Nutzung und beste Wärmedämmung.',
-      price_from: 'ab pro m²', btn_details: 'Technische Daten', btn_calc_this: 'Berechnen', btn_view_page: 'Seite anzeigen',
-      calc_title: 'Richtpreis berechnen',
-      calc_desc: 'Wählen Sie Produkt und ungefähre Maße. Das Ergebnis senden Sie uns mit einem Klick per WhatsApp.',
-      step1_title: 'Produkt', step2_title: 'Form', step3_title: 'Maße', step4_title: 'Glas und Profil',
-      shape_flat: 'Gerade', shape_l: 'L-Form', shape_u: 'U-Form',
-      label_width: 'Gesamtbreite (m)', label_height: 'Höhe (m)',
-      label_glass_type: 'Glas', label_profile_color: 'Profilfarbe',
-      opt_glass_clear: 'Klares Isolierglas', opt_glass_fume: 'Grau getönt', opt_glass_bronze: 'Bronze', opt_glass_reflect: 'Reflektierend',
-      opt_color_anthracite: 'Anthrazit (RAL 7016)', opt_color_black: 'Schwarz (RAL 9005)', opt_color_white: 'Weiß (RAL 9016)', opt_color_eloxal: 'Eloxiert', opt_color_wood: 'Holzdekor',
-      res_est_title: 'Geschätzte Preisspanne', res_product: 'Produkt',
-      res_f1: 'Kostenloses Aufmaß vor Ort', res_f2: 'Verbindliches Angebot nach Maß',
-      btn_whatsapp_quote: 'Angebot per WhatsApp anfragen',
-      res_disclaimer: 'Unverbindlicher Richtwert. Der genaue Preis folgt nach dem Aufmaß vor Ort.',
-      prod2_title: 'Vom Aufmaß bis zur Montage – ein Team',
-      prod2_p1: 'Aufmaß, Fertigung und Montage liegen in einer Hand. Keine Zwischenhändler – Ablauf, Termine und Qualität behalten wir von Anfang bis Ende selbst im Griff.',
-      prod2_p2: 'Wir liefern in die ganze Türkei und nach Europa. Support auf Türkisch, Deutsch und Englisch.',
-      s1_title: 'Beratung und Aufmaß', s1_desc: 'Wir messen vor Ort und wählen mit Ihnen das passende System.',
-      s2_title: 'Planung und Angebot', s2_desc: 'Mit Ihren Maß-, Glas- und Farbwünschen erstellen wir ein klares Angebot.',
-      s3_title: 'Fertigung', s3_desc: 'Das System wird nach den freigegebenen Maßen in unserem Werk gefertigt.',
-      s4_title: 'Lieferung und Montage', s4_desc: 'Sicher verpackt geliefert und fachgerecht montiert.',
-      contact_title: 'Kontakt', contact_addr_title: 'Adresse', contact_phone_title: 'Telefon / WhatsApp',
-      contact_email_title: 'E-Mail', contact_hours_title: 'Öffnungszeiten', contact_hours_val: 'Montag – Samstag, 08:30 – 18:30 (TR)',
-      form_title: 'Schreiben Sie uns', form_label_name: 'Name', form_label_phone: 'Telefon', form_label_country: 'Stadt / Land',
-      form_label_interest: 'Produkt', form_opt_other: 'Sonstiges', form_label_msg: 'Nachricht', form_btn_send: 'Per WhatsApp senden',
-      foot_about: 'Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesysteme – vom Aufmaß bis zur Montage aus einer Hand.',
-      foot_links: 'Links', foot_follow: 'Folgen Sie uns', foot_rights: 'Alle Rechte vorbehalten.', foot_top: 'Nach oben', country: 'Türkei',
-      chat_title: 'Meteor Live-Chat', chat_subtitle: 'KI-Assistent · Online', chat_badge: 'Live-Chat',
-      chat_welcome: "Hallo! Willkommen bei Meteor Panorama. Fragen Sie mich gerne alles zu Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesystemen. Wie kann ich Ihnen helfen?",
-      chat_placeholder: 'Schreiben Sie eine Frage...', chat_quick_title: 'Häufige Fragen:',
-      chat_status_waiting: 'Meteor AI bereitet eine Antwort vor...',
-      chat_q1: 'Welche Produkte bieten Sie an?', chat_q2: 'Ist das Aufmaß kostenlos?', chat_q3: 'Wie wird der Preis berechnet?',
-      chat_q4: 'Wohin liefern Sie?', chat_q5: 'Berater kontaktieren / Angebot',
-      chat_rep_title: 'Kontaktanfrage Fachberater', chat_rep_name: 'Ihr Name', chat_rep_phone: 'Ihre Telefonnummer',
-      chat_rep_note: 'Ihre Nachricht / Wunsch', chat_rep_btn: 'An Berater senden', chat_rep_wa: 'Per WhatsApp fortsetzen',
-      chat_rep_success: 'Ihre Anfrage wurde erfolgreich weitergeleitet! Wir melden uns in Kürze bei Ihnen.',
-      chat_err_msg: 'Bei der Antwort ist eine Verzögerung aufgetreten. Sie können unseren Berater gerne direkt per WhatsApp kontaktieren:',
-      chat_lead_prompt: 'Füllen Sie für Aufmaß & Angebot das Formular aus oder schreiben Sie uns per WhatsApp:',
-      area: 'm²', specs_title: 'Technische Daten', modal_calc: 'Preis für dieses Produkt berechnen', modal_wa: 'Per WhatsApp anfragen'
-    },
-    en: {
-      meta_title: 'Meteor Panorama | Balcony Glazing, Guillotine Glass and Winter Gardens',
-      meta_desc: 'Meteor Panorama builds insulated balcony glazing, guillotine glass, winter gardens and aluminium sliding systems to measure. One team from survey to installation.',
-      topbar_hours: 'Mon – Sat, 08:30 – 18:30 (TR)',
-      nav_products: 'Products', nav_calculator: 'Price Calculator', nav_production: 'Production', nav_contact: 'Contact', nav_cta: 'Get a Quote',
-      nav_cambalkon: 'Balcony Glazing', nav_pvc: 'PVC Systems', nav_giyotin: 'Guillotine Glass', nav_kisbahcesi: 'Winter Garden', nav_surme: 'Sliding Systems',
-      hero_place: 'Balcony glazing · Guillotine glass · Winter garden · PVC Systems',
-      hero_title: 'Turn your balcony into a four-season living space',
-      hero_lead: 'Made-to-measure production, on-site survey and professional installation. We deliver across Turkey and Europe.',
-      hero_cta_calc: 'Calculate price', hero_cta_wa: 'Message on WhatsApp',
-      hero_p1: 'Made to measure', hero_p2: 'Free on-site survey', hero_p3: 'Professional installation',
-      stat1_label: 'Years of experience', stat2_label: 'Projects completed', stat3_label: 'Languages',
-      hero_card_title: 'Free site survey', hero_card_text: 'Book an on-site measurement on WhatsApp.',
-      prod_title: 'Products',
-      prod_desc: 'Architectural systems for balconies, terraces, windows and businesses – built to your dimensions.',
-      badge_popular: 'Most popular',
-      p1_title: 'Balcony Glazing Systems', p1_desc: 'Folding glass systems with insulated double glazing or Mevlana 8mm tempered glass.',
-      p2_title: 'Motorized Guillotine Glass', p2_desc: 'Remote-controlled vertical glass panels. A balustrade when open, a full glass front when closed.',
-      p3_title: 'Winter Garden', p3_desc: 'Aluminium frame with glass roof – a year-round room in your garden or on your terrace.',
-      p4_title: 'Aluminium Sliding System', p4_desc: 'Slim-profile sliding doors with an optional flush threshold.',
-      p5_title: 'PVC Window & Door Systems', p5_desc: 'High thermal insulation multi-chamber PVC profiles with double or triple glazing.',
-      mevlana_title: 'Mevlana 8mm Tempered Single Glass', mevlana_desc: '8 mm impact-resistant tempered safety glass, open panoramic views, smooth and affordable.',
-      isicam_title: 'Insulated Double Glazed Balcony', isicam_desc: 'Double glazed folding system turning your balcony into a warm 4-season living space.',
-      price_from: 'from per m²', btn_details: 'Specifications', btn_calc_this: 'Calculate', btn_view_page: 'View Page',
-      calc_title: 'Price estimate',
-      calc_desc: 'Choose the product and approximate size. Send us the result on WhatsApp with one click.',
-      step1_title: 'Product', step2_title: 'Layout', step3_title: 'Dimensions', step4_title: 'Glass and frame',
-      shape_flat: 'Straight', shape_l: 'L-shape', shape_u: 'U-shape',
-      label_width: 'Total width (m)', label_height: 'Height (m)',
-      label_glass_type: 'Glass', label_profile_color: 'Frame colour',
-      opt_glass_clear: 'Clear double glazing', opt_glass_fume: 'Grey tint', opt_glass_bronze: 'Bronze', opt_glass_reflect: 'Reflective',
-      opt_color_anthracite: 'Anthracite (RAL 7016)', opt_color_black: 'Black (RAL 9005)', opt_color_white: 'White (RAL 9016)', opt_color_eloxal: 'Anodised', opt_color_wood: 'Wood finish',
-      res_est_title: 'Estimated price range', res_product: 'Product',
-      res_f1: 'Free on-site survey', res_f2: 'Tailored, fixed quote',
-      btn_whatsapp_quote: 'Request a quote on WhatsApp',
-      res_disclaimer: 'For guidance only. The final price is confirmed after an on-site survey.',
-      prod2_title: 'From survey to installation, one team',
-      prod2_p1: 'Survey, measuring, production and installation are handled by the same team. No middlemen – process, lead time and quality stay under our control from start to finish.',
-      prod2_p2: 'We deliver across Turkey and to Europe, with support in Turkish, German and English.',
-      s1_title: 'Survey and measuring', s1_desc: 'We measure on site and choose the right system with you.',
-      s2_title: 'Design and quote', s2_desc: 'We prepare a clear quote based on your size, glass and colour choices.',
-      s3_title: 'Production', s3_desc: 'The system is built at our plant to the approved dimensions.',
-      s4_title: 'Delivery and installation', s4_desc: 'Shipped in protective packaging and installed.',
-      contact_title: 'Contact', contact_addr_title: 'Address', contact_phone_title: 'Phone / WhatsApp',
-      contact_email_title: 'Email', contact_hours_title: 'Opening hours', contact_hours_val: 'Monday – Saturday, 08:30 – 18:30 (TR)',
-      form_title: 'Write to us', form_label_name: 'Full name', form_label_phone: 'Phone', form_label_country: 'City / country',
-      form_label_interest: 'Product', form_opt_other: 'Other', form_label_msg: 'Message', form_btn_send: 'Send via WhatsApp',
-      foot_about: 'Balcony glazing, guillotine glass, winter gardens and sliding systems – one team from survey to installation.',
-      foot_links: 'Links', foot_follow: 'Follow us', foot_rights: 'All rights reserved.', foot_top: 'Back to top', country: 'Turkey',
-      chat_title: 'Meteor Live Chat', chat_subtitle: 'AI Assistant · Online', chat_badge: 'Live Chat',
-      chat_welcome: "Hello! Welcome to Meteor Panorama. Feel free to ask me anything about balcony glazing, guillotine glass, winter gardens and sliding systems. How can I help you today?",
-      chat_placeholder: 'Type a question...', chat_quick_title: 'Quick Questions:',
-      chat_status_waiting: 'Meteor AI is preparing an answer...',
-      chat_q1: 'What are your products?', chat_q2: 'Is the site survey free?', chat_q3: 'How is price calculated?',
-      chat_q4: 'Where do you deliver?', chat_q5: 'Contact specialist / Get quote',
-      chat_rep_title: 'Specialist Contact Request', chat_rep_name: 'Your Full Name', chat_rep_phone: 'Your Phone Number',
-      chat_rep_note: 'Your Request / Note', chat_rep_btn: 'Send to Specialist', chat_rep_wa: 'Continue on WhatsApp',
-      chat_rep_success: 'Your request has been successfully sent! We will get in touch with you shortly.',
-      chat_err_msg: 'There was a delay generating a response. You can reach our specialist directly via WhatsApp:',
-      chat_lead_prompt: 'Fill out the form below for survey & quote or reach us on WhatsApp:',
-      area: 'm²', specs_title: 'Specifications', modal_calc: 'Calculate price for this product', modal_wa: 'Ask on WhatsApp'
-    }
-  };
+  const I18N = window.__METEOR_I18N__ || {};
+  const lang = ['tr', 'de', 'en'].includes(I18N.lang)
+    ? I18N.lang
+    : (['tr', 'de', 'en'].includes(document.documentElement.lang) ? document.documentElement.lang : 'tr');
+  const pageKey = document.body.dataset.page || 'home';
+  const ui = I18N.ui || {};
+  const tr = (key) => ui[key] || key;
 
   // Single source of truth: price ranges per m² (also used for the "from" prices on the cards)
   const rates = {
@@ -218,39 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
-  let lang = 'tr';
-  const tr = (key) => (t[lang] && t[lang][key]) || t.tr[key] || key;
-
-  function setLanguage(next) {
-    if (!t[next]) return;
-    lang = next;
-    document.documentElement.lang = next;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === next));
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const v = t[next][el.dataset.i18n];
-      if (v) el.textContent = v;
-    });
-    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-      const v = t[next][el.dataset.i18nPh];
-      if (v) el.setAttribute('placeholder', v);
-    });
-    document.querySelectorAll('[data-price-code]').forEach(el => {
-      const r = rates[priceCodeToProduct[el.dataset.priceCode]];
-      if (r) el.textContent = money(r[lang === 'tr' ? 'tr' : 'eu'][0]);
-    });
-    document.title = t[next].meta_title;
-    const md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute('content', t[next].meta_desc);
-    calculatePrice();
-  }
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      setLanguage(btn.dataset.lang);
-      try { localStorage.setItem('meteor_lang', btn.dataset.lang); } catch (e) {}
-    });
-  });
-
   // ---------------------------------------------------
   // Calculator
   // ---------------------------------------------------
@@ -266,11 +54,91 @@ document.addEventListener('DOMContentLoaded', () => {
   const shapeKey = { 'duz': 'shape_flat', 'l-tipi': 'shape_l', 'u-tipi': 'shape_u' };
   const glassMod = { seffaf: 1, fume: 1.07, bronz: 1.07, reflekte: 1.12 };
 
-  const state = { product: 'isicamli', shape: 'duz', width: 3.5, height: 1.6 };
+  const pageProduct = {
+    'cam-balkon': 'isicamli',
+    'pvc-sistemleri': 'pvc',
+    'giyotin-cam': 'giyotin',
+    'kis-bahcesi': 'kisbahcesi',
+    'surme-cam': 'surme'
+  }[pageKey] || null;
 
   const $ = (s) => document.querySelector(s);
   const inW = $('#inputWidth'), rgW = $('#rangeWidth'), inH = $('#inputHeight'), rgH = $('#rangeHeight');
   const glassSel = $('#glassType'), colorSel = $('#profileColor');
+
+  function activeChoice(attr) {
+    return document.querySelector(`.choice[data-${attr}].active`) || document.querySelector(`.choice[data-${attr}]`);
+  }
+
+  function clamp(value, min, max, fallback) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return fallback;
+    return Math.max(min, Math.min(max, n));
+  }
+
+  const initialProduct = activeChoice('product');
+  const initialShape = activeChoice('shape');
+  const state = {
+    product: initialProduct ? initialProduct.dataset.product : (pageProduct || 'isicamli'),
+    shape: initialShape ? initialShape.dataset.shape : 'duz',
+    width: inW ? clamp(inW.value, parseFloat(inW.min) || 1, parseFloat(inW.max) || 50, 3.5) : 3.5,
+    height: inH ? clamp(inH.value, parseFloat(inH.min) || 0.8, parseFloat(inH.max) || 6, 1.6) : 1.6
+  };
+
+  const STORAGE_KEY = 'meteor_calc_' + pageKey;
+
+  function saveCalcState() {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
+        product: state.product,
+        shape: state.shape,
+        width: state.width,
+        height: state.height,
+        glass: glassSel ? glassSel.value : null,
+        color: colorSel ? colorSel.value : null
+      }));
+    } catch (e) {}
+  }
+
+  function setActiveChoice(selector, attr, value) {
+    const items = [...document.querySelectorAll(selector)];
+    if (!items.some(item => item.getAttribute(attr) === value)) return false;
+    let matched = false;
+    items.forEach(item => {
+      const on = item.getAttribute(attr) === value;
+      item.classList.toggle('active', on);
+      item.setAttribute('aria-checked', String(on));
+      if (on) matched = true;
+    });
+    return matched;
+  }
+
+  function restoreCalcState() {
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || 'null'); } catch (e) { saved = null; }
+    if (!saved || typeof saved !== 'object') return;
+
+    if (typeof saved.product === 'string' && setActiveChoice('.choice[data-product]', 'data-product', saved.product)) {
+      state.product = saved.product;
+    }
+    if (typeof saved.shape === 'string' && setActiveChoice('.choice[data-shape]', 'data-shape', saved.shape)) {
+      state.shape = saved.shape;
+    }
+
+    state.width = inW ? clamp(saved.width, parseFloat(inW.min) || 1, parseFloat(inW.max) || 50, state.width) : state.width;
+    state.height = inH ? clamp(saved.height, parseFloat(inH.min) || 0.8, parseFloat(inH.max) || 6, state.height) : state.height;
+    if (inW) inW.value = state.width;
+    if (rgW) rgW.value = Math.min(parseFloat(rgW.max) || state.width, state.width);
+    if (inH) inH.value = state.height;
+    if (rgH) rgH.value = Math.min(parseFloat(rgH.max) || state.height, state.height);
+
+    if (glassSel && typeof saved.glass === 'string' && [...glassSel.options].some(o => o.value === saved.glass)) {
+      glassSel.value = saved.glass;
+    }
+    if (colorSel && typeof saved.color === 'string' && [...colorSel.options].some(o => o.value === saved.color)) {
+      colorSel.value = saved.color;
+    }
+  }
 
   function bindDim(input, range, key, min, max, rangeMax) {
     if (!input || !range) return;
@@ -281,15 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
       range.value = Math.min(rangeMax, state[key]);
       calculatePrice();
     });
-    input.addEventListener('change', () => { input.value = state[key]; });
+    input.addEventListener('change', () => { input.value = state[key]; calculatePrice(); });
     range.addEventListener('input', () => {
       state[key] = parseFloat(range.value);
       input.value = state[key];
       calculatePrice();
     });
   }
-  if (inW && rgW) bindDim(inW, rgW, 'width', 1, 50, 20);
-  if (inH && rgH) bindDim(inH, rgH, 'height', 0.8, 6, 4);
+  if (inW && rgW) bindDim(inW, rgW, 'width', parseFloat(inW.min) || 1, parseFloat(inW.max) || 50, parseFloat(rgW.max) || 20);
+  if (inH && rgH) bindDim(inH, rgH, 'height', parseFloat(inH.min) || 0.8, parseFloat(inH.max) || 6, parseFloat(rgH.max) || 4);
 
   function bindChoices(selector, attr, key) {
     const items = document.querySelectorAll(selector);
@@ -308,6 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const locale = () => (lang === 'tr' ? 'tr-TR' : lang === 'de' ? 'de-DE' : 'en-GB');
   const money = (n) => n.toLocaleString(locale()) + (lang === 'tr' ? ' ₺' : ' €');
+  const decimal = (n, digits) => n.toLocaleString(locale(), { minimumFractionDigits: digits, maximumFractionDigits: digits });
+
+  function updateStaticPrices() {
+    document.querySelectorAll('[data-price-code]').forEach(el => {
+      const r = rates[priceCodeToProduct[el.dataset.priceCode]];
+      if (r) el.textContent = money(r[lang === 'tr' ? 'tr' : 'eu'][0]);
+    });
+  }
 
   function calculatePrice() {
     const resPriceDisplay = $('#resPriceDisplay');
@@ -323,12 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const max = Math.round(area * r[1] * mod / round) * round;
 
     resPriceDisplay.textContent = `${money(min)} – ${money(max)}`;
-    if ($('#resDimensions')) $('#resDimensions').textContent = `${w.toFixed(1)} × ${h.toFixed(1)} m`;
-    if ($('#resTotalArea')) $('#resTotalArea').textContent = `${area.toFixed(2)} m²`;
+    if ($('#resDimensions')) $('#resDimensions').textContent = `${decimal(w, 1)} × ${decimal(h, 1)} m`;
+    if ($('#resTotalArea')) $('#resTotalArea').textContent = `${decimal(area, 2)} m²`;
     if ($('#resProduct')) $('#resProduct').textContent = tr(productKey[state.product] || 'p1_title');
 
-    const glassTxt = (glassSel && glassSel.options[glassSel.selectedIndex]) ? glassSel.options[glassSel.selectedIndex].text : 'Standart';
-    const colorTxt = (colorSel && colorSel.options[colorSel.selectedIndex]) ? colorSel.options[colorSel.selectedIndex].text : 'Standart';
+    const glassTxt = (glassSel && glassSel.options[glassSel.selectedIndex]) ? glassSel.options[glassSel.selectedIndex].text : '-';
+    const colorTxt = (colorSel && colorSel.options[colorSel.selectedIndex]) ? colorSel.options[colorSel.selectedIndex].text : '-';
     const lines = {
       tr: ['Merhaba, web sitenizden fiyat hesapladım:', 'Ürün', 'Şekil', 'Ölçü', 'Cam', 'Profil', 'Tahmini fiyat', 'Detaylı teklif almak istiyorum.'],
       de: ['Hallo, ich habe auf Ihrer Website einen Richtpreis berechnet:', 'Produkt', 'Form', 'Maße', 'Glas', 'Profil', 'Richtpreis', 'Ich bitte um ein Angebot.'],
@@ -337,12 +213,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const msg = `${lines[0]}\n\n` +
       `${lines[1]}: ${tr(productKey[state.product] || 'p1_title')}\n` +
       `${lines[2]}: ${tr(shapeKey[state.shape] || 'shape_flat')}\n` +
-      `${lines[3]}: ${w.toFixed(1)} × ${h.toFixed(1)} m (${area.toFixed(2)} m²)\n` +
+      `${lines[3]}: ${decimal(w, 1)} × ${decimal(h, 1)} m (${decimal(area, 2)} m²)\n` +
       `${lines[4]}: ${glassTxt}\n` +
       `${lines[5]}: ${colorTxt}\n` +
       `${lines[6]}: ${money(min)} – ${money(max)}\n\n${lines[7]}`;
     if ($('#btnSendWhatsapp')) $('#btnSendWhatsapp').href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+    saveCalcState();
   }
+
+  restoreCalcState();
+  updateStaticPrices();
+  calculatePrice();
+
+  // Keep calculator values when the visitor changes language (full page navigation).
+  document.querySelectorAll('[data-lang-link]').forEach(link => {
+    link.addEventListener('click', saveCalcState);
+  });
+  window.addEventListener('beforeunload', saveCalcState);
 
   document.querySelectorAll('.btn-select-product').forEach(btn => {
     btn.addEventListener('click', () => selectAndScroll(btn.dataset.targetProduct));
@@ -359,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------
   const modalData = {
     'modal-isicam': {
-      img: 'assets/hero-light.jpg', product: 'isicamli', title: 'p1_title', desc: 'p1_desc',
+      img: '/assets/hero-light.jpg', product: 'isicamli', title: 'p1_title', desc: 'p1_desc',
       specs: {
         tr: [['Cam', '4+12+4 veya 4+16+4 temperli çift cam'], ['Profil', 'Alüminyum, elektrostatik toz boya'], ['Açılım', 'Katlanır, içe veya dışa toplanır'], ['Conta', 'EPDM fitil'], ['Üretim', 'Kayseri']],
         de: [['Glas', '4+12+4 oder 4+16+4 ESG-Isolierglas'], ['Profil', 'Aluminium, pulverbeschichtet'], ['Öffnung', 'Faltbar, nach innen oder außen'], ['Dichtung', 'EPDM'], ['Fertigung', 'Kayseri']],
@@ -367,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     'modal-giyotin': {
-      img: 'assets/giyotin-light.jpg', product: 'giyotin', title: 'p2_title', desc: 'p2_desc',
+      img: '/assets/giyotin-light.jpg', product: 'giyotin', title: 'p2_title', desc: 'p2_desc',
       specs: {
         tr: [['Cam', '8–10 mm temperli veya ısıcam'], ['Hareket', 'Motorlu, kayış tahrikli'], ['Kumanda', 'Uzaktan kumanda / duvar anahtarı'], ['Kullanım', 'Teras, balkon, restoran'], ['Üretim', 'Kayseri']],
         de: [['Glas', '8–10 mm ESG oder Isolierglas'], ['Antrieb', 'Motorisch, Zahnriemen'], ['Steuerung', 'Fernbedienung / Wandschalter'], ['Einsatz', 'Terrasse, Balkon, Gastronomie'], ['Fertigung', 'Kayseri']],
@@ -375,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     'modal-kis-bahcesi': {
-      img: 'assets/wintergarten-light.jpg', product: 'kisbahcesi', title: 'p3_title', desc: 'p3_desc',
+      img: '/assets/wintergarten-light.jpg', product: 'kisbahcesi', title: 'p3_title', desc: 'p3_desc',
       specs: {
         tr: [['Taşıyıcı', 'Alüminyum kolon ve kiriş'], ['Çatı', 'Lamine cam veya panel'], ['Yan yüzeyler', 'Sürme, katlanır veya giyotin cam'], ['Drenaj', 'Gizli yağmur oluğu'], ['Üretim', 'Kayseri']],
         de: [['Tragwerk', 'Aluminiumstützen und -träger'], ['Dach', 'VSG-Glas oder Paneel'], ['Seiten', 'Schiebe-, Falt- oder Guillotine-Glas'], ['Entwässerung', 'Verdeckte Regenrinne'], ['Fertigung', 'Kayseri']],
@@ -383,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     'modal-surme': {
-      img: 'assets/sliding-light.jpg', product: 'surme', title: 'p4_title', desc: 'p4_desc',
+      img: '/assets/sliding-light.jpg', product: 'surme', title: 'p4_title', desc: 'p4_desc',
       specs: {
         tr: [['Cam', 'Tek cam veya ısıcam'], ['Ray', 'Standart veya eşiksiz (gömme) ray'], ['Kilit', 'Anahtarlı kilit seçeneği'], ['Profil', 'Alüminyum, ince kasa'], ['Üretim', 'Kayseri']],
         de: [['Glas', 'Einfach- oder Isolierglas'], ['Schiene', 'Standard oder schwellenlos'], ['Verriegelung', 'Optional mit Schloss'], ['Profil', 'Aluminium, schmal'], ['Fertigung', 'Kayseri']],
@@ -391,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     'modal-pvc': {
-      img: 'assets/pvc-light.jpg', product: 'pvc', title: 'p5_title', desc: 'p5_desc',
+      img: '/assets/pvc-light.jpg', product: 'pvc', title: 'p5_title', desc: 'p5_desc',
       specs: {
         tr: [['Profil', '70–80 mm çok odacıklı PVC profil'], ['Cam', '4+16+4 çift veya üçlü ısıcam'], ['Açılım', 'Tek açılım, çift açılım, sürme kapı'], ['Conta', 'EPDM gri/siyah çift conta'], ['Üretim', 'Kayseri']],
         de: [['Profil', '70–80 mm Mehrkammer-PVC'], ['Glas', '2-fach oder 3-fach Isolierglas'], ['Öffnung', 'Dreh-Kipp, Schiebe'], ['Dichtung', 'EPDM Doppel-Dichtung'], ['Fertigung', 'Kayseri']],
@@ -482,11 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('#currentYear').textContent = new Date().getFullYear();
 
-  // Initial language
-  let saved = 'tr';
-  try { saved = localStorage.getItem('meteor_lang') || 'tr'; } catch (e) {}
-  setLanguage(t[saved] ? saved : 'tr');
-
   // ---------------------------------------------------
   // AI Live Chat & Telegram Lead Entegrasyonu
   // Güvenlik Katmanı: Tüm API anahtarları ve Telegram tokenları
@@ -512,6 +394,34 @@ document.addEventListener('DOMContentLoaded', () => {
   let isChatBusy = false;
   let chatInitialized = false;
 
+  const productNames = {
+    tr: 'Cam Balkon, PVC Pencere ve Kapı, Motorlu Giyotin Cam, Kış Bahçesi, Alüminyum Sürme Sistem',
+    de: 'Balkonverglasung, PVC-Fenster und -Türen, Elektrisches Guillotine-Glas, Wintergarten, Aluminium-Schiebesystem',
+    en: 'Balcony Glazing, PVC Windows and Doors, Motorized Guillotine Glass, Winter Garden, Aluminium Sliding System'
+  };
+  const productFacts = {
+    tr: '1) Cam Balkon: Isıcamlı çift cam 4+12+4/4+16+4 veya Mevlana 8 mm temperli tek cam; katlanır sistem.\n' +
+      '2) PVC Pencere ve Kapı: 70–80 mm çok odacıklı profil; 4+16+4 çift veya üçlü ısıcam; pencere, balkon kapısı ve sürme seçenekleri.\n' +
+      '3) Motorlu Giyotin Cam: Uzaktan kumandalı dikey panel; açıkken cam korkuluk, kapalıyken tam cam cephe.\n' +
+      '4) Kış Bahçesi: Alüminyum kolon/kiriş, lamine cam çatı, gizli yağmur oluğu.\n' +
+      '5) Alüminyum Sürme Sistem: İnce alüminyum profil, 2–5 ray, isteğe bağlı eşiksiz/gömme zemin rayı.',
+    de: '1) Balkonverglasung: Faltsystem mit Isolierglas 4+12+4/4+16+4 oder Mevlana 8 mm ESG-Einscheibenglas.\n' +
+      '2) PVC-Fenster und -Türen: 70–80 mm Mehrkammerprofile, 4+16+4 Doppel- oder Dreifachverglasung, Fenster/Balkontüren/Schiebeoptionen.\n' +
+      '3) Elektrisches Guillotine-Glas: motorisch per Fernbedienung vertikal; offen als Glasbrüstung, geschlossen als Glasfront.\n' +
+      '4) Wintergarten: Aluminiumstützen und -träger, VSG-Glasdach, verdeckte Regenrinne.\n' +
+      '5) Aluminium-Schiebesystem: schlanke Profile, 2–5 Schienen, optional schwellenlose/eingelassene Bodenschiene.',
+    en: '1) Balcony glazing: folding system with 4+12+4/4+16+4 insulated glazing or Mevlana 8 mm tempered single glass.\n' +
+      '2) PVC windows and doors: 70–80 mm multi-chamber profiles, 4+16+4 double or triple glazing, windows/balcony doors/sliding options.\n' +
+      '3) Motorized guillotine glass: remote-controlled vertical panels; open as a glass balustrade, closed as a full glass front.\n' +
+      '4) Winter garden: aluminium posts and beams, laminated glass roof, concealed rainwater gutter.\n' +
+      '5) Aluminium sliding system: slim profiles, 2–5 tracks, optional flush/recessed floor track.'
+  };
+  const noInvent = {
+    tr: 'Bu gerçeklerin dışında teknik detay, ölçü veya özellik uydurma.',
+    de: 'Erfinde keine technischen Details, Maße oder Eigenschaften, die hier nicht stehen.',
+    en: 'Do not invent technical details, dimensions or features that are not listed here.'
+  };
+
   function cleanBotReply(text, cLang) {
     if (!text) return '';
     let cleaned = text
@@ -522,11 +432,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!cleaned || cleaned.length < 2) {
       if (cLang === 'de') {
-        return 'Gern geschehen! Wie kann ich Ihnen bei Balkonverglasung, Guillotine-Glas oder Wintergärten weiterhelfen?';
+        return 'Gern geschehen! Wie kann ich Ihnen bei Balkonverglasung, PVC-Fenstern, Guillotine-Glas oder Wintergärten weiterhelfen?';
       } else if (cLang === 'en') {
-        return "You're welcome! How else can I assist you regarding our balcony glazing, guillotine glass or winter garden systems?";
+        return "You're welcome! How else can I assist you regarding our balcony glazing, PVC windows, guillotine glass or winter garden systems?";
       } else {
-        return 'Rica ederim! Isıcamlı cam balkon, giyotin cam veya kış bahçesi sistemlerimizle ilgili başka nasıl yardımcı olabilirim?';
+        return 'Rica ederim! Isıcamlı cam balkon, PVC pencere, giyotin cam veya kış bahçesi sistemlerimizle ilgili başka nasıl yardımcı olabilirim?';
       }
     }
     return cleaned;
@@ -562,16 +472,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getSystemPrompt(cLang) {
     const langNames = { tr: 'Türkçe', de: 'Almanca (Deutsch)', en: 'İngilizce (English)' };
+    const assistantNames = { tr: 'Meteor AI Asistan', de: 'Meteor AI Assistent', en: 'Meteor AI Assistant' };
     return "Sen Meteor Panorama firmasının resmi, bilgili, güler yüzlü ve son derece uzman yapay zeka müşteri danışmanısın.\n" +
-      "Adın: Meteor AI Asistan.\n" +
-      "Şu anki dil: " + (langNames[cLang] || 'Türkçe') + ". Yanıtlarını kesinlikle kullanıcının konuştuğu dilde ver (" + (langNames[cLang] || 'Türkçe') + ").\n\n" +
+      "Adın: " + (assistantNames[cLang] || assistantNames.tr) + ".\n" +
+      "Şu anki site dili: " + (langNames[cLang] || 'Türkçe') + ". Varsayılan olarak bu dilde yanıt ver; kullanıcı başka bir dilde yazarsa o dilde yanıtla.\n\n" +
       "FİRMA BİLGİLERİ (METEOR PANORAMA):\n" +
       "- Üretici: Kayseri Mimarsinan Organize Sanayi Bölgesi'ndeki modern tesisimizde (Mimarsinan OSB 25. Cad. No:7, Melikgazi / Kayseri / Türkiye) özel ölçüye göre imalat yapıyoruz.\n" +
-      "- Dört Ana Ürünümüz:\n" +
-      "  1) Isıcamlı Cam Balkon: Çift camlı (4+12+4 veya 4+16+4 temperli), balkonu kışın da tam yaşanabilir sıcak bir odaya çeviren katlanır sistem.\n" +
-      "  2) Motorlu Giyotin Cam: Kumandayla dikey açılıp kapanan cam paneller. Açıkken cam korkuluk, kapalıyken tam cephe olur. Teras, balkon, kafe ve restoranlar için idealdir.\n" +
-      "  3) Kış Bahçesi: Alüminyum kolon/kiriş taşıyıcı, lamine cam tavan, gizli yağmur oluğu ile dört mevsim bahçe ve teras keyfi.\n" +
-      "  4) Alüminyum Sürme Sistem: İnce zarif profilli, eşiksiz (gömme) zemin ray seçenekli sürme kapı sistemleri.\n" +
+      "- Ana Ürünlerimiz (bu adları kullan): " + productNames[cLang] + "\n" +
+      "- Ürün gerçekleri:\n" + productFacts[cLang] + "\n" +
+      "- " + noInvent[cLang] + "\n" +
       "- Hizmet Felsefesi: 'Ölçüden montaja, tek ekip'. Aracı yoktur; keşif, ölçü, üretim ve montaj baştan sona kendi uzman ekibimizdedir.\n" +
       "- Keşif ve Ölçü: Keşif ve yerinde ölçü hizmetimiz tamamen ÜCRETSİZDİR.\n" +
       "- Teslimat: Tüm Türkiye'ye ve Almanya başta olmak üzere tüm Avrupa ülkelerine ölçüye özel güvenli teslimat yapıyoruz.\n" +
@@ -581,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "FİYAT VE TEKLİF KURALLARI (ÇOK ÖNEMLİ):\n" +
       "- Asla kesin bir son fiyat veya pazarlık rakamı uydurma!\n" +
       "- Sitede bir 'Tahmini Fiyat Hesaplama' aracı (#hesaplayici) olduğunu belirt.\n" +
-      "- Yaklaşık m² başlangıç fiyatları: Isıcamlı Cam Balkon ~3.400 ₺ (140 €), Motorlu Giyotin ~6.400 ₺ (280 €), Kış Bahçesi ~10.500 ₺ (460 €), Sürme Sistem ~3.800 ₺ (160 €) seviyesindedir.\n" +
+      "- Yaklaşık m² başlangıç fiyatları: Cam Balkon ~3.400 ₺ (140 €), PVC Pencere/Kapı ~2.800 ₺ (120 €), Motorlu Giyotin ~6.400 ₺ (280 €), Kış Bahçesi ~10.500 ₺ (460 €), Sürme Sistem ~3.800 ₺ (160 €) seviyesindedir.\n" +
       "- Kesin net maliyetin alanın şekline, ölçülerine ve cam tipine göre yerinde ücretsiz ölçü alındıktan sonra netleşeceğini söyle.\n" +
       "- Müşteri kesin fiyat, randevu veya keşif talep ederse: 'Yetkili uzmanımızın sizinle iletişime geçmesi için adınızı ve telefon numaranızı belirtebilir veya WhatsApp\'tan yazabilirsiniz.' şeklinde yönlendir.\n\n" +
       "GÜVENLİK VE FORMAT KURALI (KESİNLİKLE UYULACAK):\n" +
@@ -708,11 +617,11 @@ document.addEventListener('DOMContentLoaded', () => {
     card.id = 'chatLeadCard';
     card.innerHTML =
       '<h4>' + tr('chat_rep_title') + '</h4>' +
-      '<input type="text" id="leadName" class="chat-lead-input" placeholder="' + tr('chat_rep_name') + ' *" required>' +
-      '<input type="tel" id="leadPhone" class="chat-lead-input" placeholder="' + tr('chat_rep_phone') + ' *" required>' +
-      '<input type="text" id="leadNote" class="chat-lead-input" placeholder="' + tr('chat_rep_note') + '" value="' + noteVal + '">' +
+      '<input type="text" id="leadName" class="chat-lead-input" aria-label="' + tr('chat_rep_name') + '" placeholder="' + tr('chat_rep_name') + ' *" required>' +
+      '<input type="tel" id="leadPhone" class="chat-lead-input" aria-label="' + tr('chat_rep_phone') + '" placeholder="' + tr('chat_rep_phone') + ' *" required>' +
+      '<input type="text" id="leadNote" class="chat-lead-input" aria-label="' + tr('chat_rep_note') + '" placeholder="' + tr('chat_rep_note') + '" value="' + noteVal + '">' +
       '<button type="button" class="chat-lead-btn" id="btnSendLead">' + tr('chat_rep_btn') + '</button>' +
-      '<a href="https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent('Merhaba, web sitenizdeki canlı destek üzerinden teklif almak istiyorum.') + '" target="_blank" rel="noopener" class="chat-lead-wa">' +
+      '<a href="https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(tr('chat_lead_wa_text')) + '" target="_blank" rel="noopener" class="chat-lead-wa">' +
         '<svg viewBox="0 0 24 24" class="ic-wa" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>' +
         '<span>' + tr('chat_rep_wa') + '</span>' +
       '</a>';
@@ -731,26 +640,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const note = noteInput ? noteInput.value.trim() : '';
 
         if (!name || !phone) {
-          alert(lang === 'tr' ? 'Lütfen adınızı ve telefon numaranızı giriniz.' : lang === 'de' ? 'Bitte geben Sie Ihren Namen und Ihre Telefonnummer ein.' : 'Please enter your name and phone number.');
+          alert(tr('chat_lead_required'));
           return;
         }
 
-        const textMsg =
-          '🔔 YENİ MÜŞTERİ TALEBİ (Meteor Panorama)\n' +
-          '━━━━━━━━━━━━━━━━━━━━━━\n' +
-          '👤 Müşteri: ' + name + '\n' +
-          '📞 Telefon: ' + phone + '\n' +
-          '📝 Talep / Not: ' + (note || 'Belirtilmedi') + '\n' +
-          '🌐 Site Dili: ' + lang.toUpperCase() + '\n' +
-          '🕒 Tarih: ' + new Date().toLocaleString('tr-TR') + '\n' +
-          '━━━━━━━━━━━━━━━━━━━━━━\n' +
-          '💬 Müşteriye doğrudan bu numaradan dönüş yapabilirsiniz.';
+        const waText =
+          tr('chat_lead_wa_text') + '\n\n' +
+          tr('form_label_name') + ': ' + name + '\n' +
+          tr('form_label_phone') + ': ' + phone + '\n' +
+          (note ? tr('form_label_msg') + ': ' + note : tr('form_label_msg') + ': ' + tr('chat_lead_note_default'));
 
-        const waUrl = 'https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(textMsg);
+        const waUrl = 'https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(waText);
 
         try {
           btn.disabled = true;
-          btn.textContent = lang === 'tr' ? 'İletiliyor...' : lang === 'de' ? 'Wird gesendet...' : 'Sending...';
+          btn.textContent = tr('chat_lead_sending');
           const res = await fetch('/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -760,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML =
               '<div style="background:#f0fdf4;border:1px solid #86efac;color:#166534;padding:12px;border-radius:8px;font-size:0.86rem;line-height:1.45;">' +
                 '<strong>✓ ' + tr('chat_rep_success') + '</strong>' +
-                '<p style="margin:4px 0 0;font-size:0.8rem;color:#15803d;">Talebiniz yetkili ekibimize başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz.</p>' +
+                '<p style="margin:4px 0 0;font-size:0.8rem;color:#15803d;">' + tr('chat_lead_success_detail') + '</p>' +
               '</div>' +
               '<a href="' + waUrl + '" target="_blank" rel="noopener" class="chat-lead-wa" style="display:flex;margin-top:8px;">' +
                 '<svg viewBox="0 0 24 24" class="ic-wa" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>' +
@@ -774,8 +678,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         card.innerHTML =
-          '<div style="color:#15803d;font-weight:600;margin-bottom:8px;">✓ ' + tr('chat_rep_success') + '</div>' +
-          '<a href="' + waUrl + '" target="_blank" rel="noopener" class="chat-lead-wa" style="display:flex;">' +
+          '<div style="background:#fffbeb;border:1px solid #fcd34d;color:#92400e;padding:12px;border-radius:8px;font-size:0.86rem;line-height:1.45;">' +
+            '<strong>! ' + tr('chat_lead_fallback') + '</strong>' +
+          '</div>' +
+          '<a href="' + waUrl + '" target="_blank" rel="noopener" class="chat-lead-wa" style="display:flex;margin-top:8px;">' +
             '<svg viewBox="0 0 24 24" class="ic-wa" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>' +
             '<span>' + tr('chat_rep_wa') + '</span>' +
           '</a>';
@@ -784,15 +690,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function callOpenRouterAI(messagesPayload) {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        messages: messagesPayload
-      })
-    });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 65000);
+    let res;
+    try {
+      res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          messages: messagesPayload
+        }),
+        signal: controller.signal
+      });
+    } finally {
+      clearTimeout(timer);
+    }
 
     if (!res.ok) {
       throw new Error('Chat API HTTP ' + res.status);
