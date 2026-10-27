@@ -653,9 +653,8 @@ app.post('/api/chat', rateLimit, async (req, res) => {
     }
 
     const models = [
+      'nvidia/nemotron-3-ultra-550b-a55b:free',
       'openrouter/free',
-      'google/gemma-4-31b-it:free',
-      'liquid/lfm-2.5-2.6b:free',
       'cohere/north-mini-code:free'
     ];
 
@@ -676,9 +675,9 @@ app.post('/api/chat', rateLimit, async (req, res) => {
             model,
             messages,
             temperature: 0.6,
-            max_tokens: 1500
+            max_tokens: 800
           }),
-          signal: AbortSignal.timeout(15000)
+          signal: AbortSignal.timeout(28000)
         });
 
         if (!response.ok) {
@@ -692,7 +691,11 @@ app.post('/api/chat', rateLimit, async (req, res) => {
           : '';
 
         if (content && content.trim()) {
-          botReply = content.trim();
+          const trimmed = content.trim();
+          if (/^user\s*safety:\s*safe$/i.test(trimmed)) {
+            continue;
+          }
+          botReply = trimmed;
           break;
         }
       } catch (err) {
