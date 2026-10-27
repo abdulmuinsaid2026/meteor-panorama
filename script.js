@@ -516,12 +516,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = forceOpen !== undefined ? forceOpen : !isOpen;
     if (next) {
       chatWidget.classList.add('open');
+      document.body.classList.add('chat-is-open');
       if (chatToggle) chatToggle.setAttribute('aria-expanded', 'true');
       if (chatWindow) chatWindow.hidden = false;
       initChat();
-      setTimeout(() => { if (chatInput) chatInput.focus(); }, 150);
+      setTimeout(() => {
+        if (chatBody) chatBody.scrollTop = 0;
+        if (chatInput && window.innerWidth > 600) chatInput.focus();
+      }, 150);
     } else {
       chatWidget.classList.remove('open');
+      document.body.classList.remove('chat-is-open');
       if (chatToggle) chatToggle.setAttribute('aria-expanded', 'false');
       if (chatWindow) chatWindow.hidden = true;
     }
