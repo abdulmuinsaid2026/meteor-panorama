@@ -479,6 +479,11 @@ function renderPage(res, pageKey, lang) {
   const $ = cheerio.load(html, { decodeEntities: true });
   $('body').attr('data-page', pageKey);
 
+  // Kayseri ve çevre iller duyuru bandı yalnızca Türkçe dilinde gösterilir.
+  if (lang !== 'tr') {
+    $('.announcement-ticker').remove();
+  }
+
   applyUiTranslations($, lang);
   translateAttributes($, lang);
   translateTextNodes($.root()[0], lang);

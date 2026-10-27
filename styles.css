@@ -15,6 +15,7 @@
   --radius-lg: 14px;
   --header-h: 88px;
   --topbar-h: 39px;
+  --ticker-h: 36px;
   --shadow-sm: 0 2px 8px rgba(20, 32, 42, .06);
   --shadow-md: 0 18px 40px -12px rgba(20, 32, 42, .22);
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -48,6 +49,136 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .btn-line:hover { border-color: var(--ink); }
 .btn-wa { background: var(--wa); color: #fff; }
 .btn-wa:hover { background: var(--wa-dark); box-shadow: 0 8px 20px -8px rgba(31,174,85,.7); }
+
+/* Announcement Ticker (Kayan Duyuru Bandı - Kayseri & Çevre İller - Yalnızca TR dilinde) */
+html:not([lang="tr"]) .announcement-ticker {
+  display: none !important;
+}
+.announcement-ticker {
+  background: linear-gradient(90deg, #0e171f 0%, #162938 50%, #0e171f 100%);
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 101;
+  overflow: hidden;
+  user-select: none;
+}
+.ticker-wrapper {
+  display: flex;
+  align-items: center;
+  height: var(--ticker-h);
+  overflow: hidden;
+  position: relative;
+}
+.ticker-wrapper::before,
+.ticker-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 36px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ticker-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0e171f, transparent);
+}
+.ticker-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0e171f, transparent);
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+  animation: ticker-slide 32s linear infinite;
+}
+.announcement-ticker:hover .ticker-track,
+.announcement-ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+.ticker-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+.ticker-item strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.ticker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(45, 106, 135, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.ticker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: ticker-pulse 1.8s infinite;
+}
+@keyframes ticker-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.ticker-sep {
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 0.85rem;
+  padding: 0 2px;
+}
+.ticker-cta-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  transition: color 0.15s, background-color 0.15s;
+}
+.ticker-cta-link:hover,
+.ticker-cta-link:focus-visible {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@keyframes ticker-slide {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+  .ticker-wrapper {
+    overflow-x: auto;
+  }
+}
 
 /* Top bar */
 .topbar { background: var(--ink); color: #b8c4cc; font-size: 0.82rem; }
@@ -501,7 +632,11 @@ a.social-link:hover, .social-link:hover { transform: translateY(-3px); box-shado
 }
 
 @media (max-width: 600px) {
-  :root { --header-h: 68px; }
+  :root { --header-h: 68px; --ticker-h: 34px; }
+  .announcement-ticker { font-size: 0.76rem; }
+  .ticker-pill { font-size: 0.68rem; padding: 2px 6px; }
+  .ticker-item { padding: 0 10px; }
+  .ticker-track { animation-duration: 26s; }
   .wrap { padding: 0 18px; }
   .topbar { display: none; }
   .brand-logo { height: 46px; }

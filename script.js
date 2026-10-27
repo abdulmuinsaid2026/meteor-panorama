@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const ui = I18N.ui || {};
   const tr = (key) => ui[key] || key;
 
+  // Kayan yazı duyuru bandı yalnızca Türkçe dilinde gösterilir
+  if (lang !== 'tr') {
+    const ticker = document.querySelector('.announcement-ticker');
+    if (ticker) ticker.remove();
+  }
+
   // Single source of truth: price ranges per m² (also used for the "from" prices on the cards)
   const rates = {
     isicamli:   { tr: [3400, 4400],   eu: [140, 190] },
