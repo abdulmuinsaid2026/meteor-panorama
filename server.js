@@ -653,9 +653,10 @@ app.post('/api/chat', rateLimit, async (req, res) => {
     }
 
     const models = [
-      'google/gemma-4-26b-a4b-it:free',
-      'nvidia/nemotron-3-super-120b-a12b:free',
-      'openrouter/free'
+      'openrouter/free',
+      'google/gemma-4-31b-it:free',
+      'liquid/lfm-2.5-2.6b:free',
+      'cohere/north-mini-code:free'
     ];
 
     let botReply = '';
@@ -677,7 +678,7 @@ app.post('/api/chat', rateLimit, async (req, res) => {
             temperature: 0.6,
             max_tokens: 1500
           }),
-          signal: AbortSignal.timeout(20000)
+          signal: AbortSignal.timeout(15000)
         });
 
         if (!response.ok) {
