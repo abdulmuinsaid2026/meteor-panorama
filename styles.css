@@ -50,10 +50,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .btn-wa { background: var(--wa); color: #fff; }
 .btn-wa:hover { background: var(--wa-dark); box-shadow: 0 8px 20px -8px rgba(31,174,85,.7); }
 
-/* Announcement Ticker (Kayan Duyuru Bandı - Kayseri & Çevre İller - Yalnızca TR dilinde) */
-html:not([lang="tr"]) .announcement-ticker {
-  display: none !important;
-}
+/* Announcement Ticker (Kayan Duyuru Bandı) */
 .announcement-ticker {
   background: linear-gradient(90deg, #0e171f 0%, #162938 50%, #0e171f 100%);
   color: #e2e8f0;

@@ -20,12 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const ui = I18N.ui || {};
   const tr = (key) => ui[key] || key;
 
-  // Kayan yazı duyuru bandı yalnızca Türkçe dilinde gösterilir
-  if (lang !== 'tr') {
-    const ticker = document.querySelector('.announcement-ticker');
-    if (ticker) ticker.remove();
-  }
-
   // Single source of truth: price ranges per m² (also used for the "from" prices on the cards)
   const rates = {
     isicamli:   { tr: [3400, 4400],   eu: [140, 190] },
@@ -488,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "- Ürün gerçekleri:\n" + productFacts[cLang] + "\n" +
       "- " + noInvent[cLang] + "\n" +
       "- Hizmet Felsefesi: 'Ölçüden montaja, tek ekip'. Aracı yoktur; keşif, ölçü, üretim ve montaj baştan sona kendi uzman ekibimizdedir.\n" +
-      "- Keşif ve Ölçü: Keşif ve yerinde ölçü hizmetimiz tamamen ÜCRETSİZDİR.\n" +
+      "- Keşif ve Ölçü: Kayseri ve çevre illerde ile Almanya'da Nordrhein-Westfalen (NRW) eyaletinde keşif ve yerinde ölçü hizmetimiz tamamen ÜCRETSİZDİR.\n" +
       "- Teslimat: Tüm Türkiye'ye ve Almanya başta olmak üzere tüm Avrupa ülkelerine ölçüye özel güvenli teslimat yapıyoruz.\n" +
       "- Tecrübe: 10+ yıl sektör deneyimi, 250+ tamamlanmış proje.\n" +
       "- Çalışma Saatleri: Pazartesi – Cumartesi 08:30 – 18:30 (TR saati).\n" +

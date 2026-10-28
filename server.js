@@ -136,6 +136,7 @@ function applyUiTranslations($, lang) {
   $('.breadcrumb').attr('aria-label', ui[lang].breadcrumb_label || ui.tr.breadcrumb_label);
   $('.social').attr('aria-label', ui[lang].social_label || ui.tr.social_label);
   $('#chatInput').attr('aria-label', ui[lang].chat_placeholder || ui.tr.chat_placeholder);
+  $('.announcement-ticker').attr('aria-label', (ui[lang] && ui[lang].ticker_aria) || ui.tr.ticker_aria);
 }
 
 function translateAttributes($, lang) {
@@ -478,11 +479,6 @@ function renderPage(res, pageKey, lang) {
 
   const $ = cheerio.load(html, { decodeEntities: true });
   $('body').attr('data-page', pageKey);
-
-  // Kayseri ve çevre iller duyuru bandı yalnızca Türkçe dilinde gösterilir.
-  if (lang !== 'tr') {
-    $('.announcement-ticker').remove();
-  }
 
   applyUiTranslations($, lang);
   translateAttributes($, lang);
